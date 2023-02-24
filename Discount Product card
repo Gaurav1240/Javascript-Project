@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+
+.generic-cd-slider-ul {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    font-size: 0;
+    line-height: 0;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    
+}
+
+.generic-cd-slider-ul-li {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    font-size: initial;
+    line-height: normal;
+    -moz-transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+    -webkit-transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+    transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+    vertical-align: top;
+    box-sizing: border-box;
+    white-space: normal;
+}
+  
+.offer{
+    font-size:14px ;
+    font-weight:bold ;
+    color: green;
+    margin: 10px 10px auto;
+    text-align: center;
+}
+
+
+
+.hc-stores {
+    
+    grid-template-columns: repeat(auto-fill, 222px);
+    grid-gap: 5rem;
+    justify-content: space-between;
+    display: inline-block;
+    padding: 5px 2px 5px 2px ;
+    box-sizing: border-box;
+    white-space: normal;
+    margin-left: 2%;
+    
+}
+
+.hc-action-btn {
+    width: 186px;
+    height: 34px;
+    border-radius: 3px;
+    background-color: #cd3232;
+    margin: auto;
+    line-height: 34px;
+    font-size: 12px;
+    font-weight: bold;
+    right: 0px;
+    left: 0;
+    bottom: 20px;
+    position: absolute;
+    letter-spacing: 0.02px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 2px solid #cd3232;
+}
+
+.hc-store-card {
+    width: 220px;
+    height: 225px;
+    border-radius: 3px;
+    border: solid 1px #d9e0e2;
+    background-color: #ffffff;
+    position: relative;
+   
+    
+    
+}
+
+.home-main-cmp .block-content {
+    margin-top: 25px;
+    text-align: center;
+    position: relative;
+}
+.generic-cd-slider {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.content-wrapper {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1170px;
+}
+.block-heading {
+    font-family: HelveticaNeue;
+    font-size: 20px;
+    font-weight: bold;
+    color: #322f2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-main-cmp {
+    margin-top: 50px;
+}
+.generic-cd-slider {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+img{
+    
+    width: 220px;
+}
+</style>
+<script>
+
+const amount = [10,20,30,40,50];
+
+function myFunction(){
+for (var i = 0; i < amount.length; i++) {
+    let a = document.getElementById("coupon");
+  a.id = 'coupon_' + i;
+  a.innerHTML = amount[i] + '%' + 'OFF';
+
+ 
+   }
+}
+
+$(document).ready(function(){ 
+  let elem = document.getElementById("e");
+
+  
+   
+for (var i = 0; i < amount.length; i++) {
+  let elem = document.getElementById("e").cloneNode(true);
+  elem.id = 'e_' + i;
+   elem.innerHTML += '<div class="hc-store-card"><img src="zomato.png"><div class="offer">Up to 40% OFF </div><div id="coupon" onclick="myFunction();" class="hc-action-btn">Show coupon </div></div>';
+   
+ 
+  document.body.appendChild(elem);
+}
+ 
+
+});  
+
+
+
+
+</script>
+
+
+</head>
+<body>
+<section class="home-main-cmp">
+<div class="content-wrapper">
+   
+    
+        <h3 class="block-heading"> HIGH CASHBACK STORES</h3>
+        <div  class="block-content">
+        <div  class="generic-cd-slider">
+    
+<ul class="generic-cd-slider-ul">
+  <li class="generic-cd-slider-ul-li">
+    <div id="e" class="hc-stores"></div>
+  </ul>
+</li>
+     
+
+   
+
+
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
